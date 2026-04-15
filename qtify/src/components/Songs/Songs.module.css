@@ -1,0 +1,16 @@
+songsSection {
+  padding: 32px 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;  /* Reduced because Tabs will add spacing below */
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-white);
+}
