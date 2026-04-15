@@ -1,22 +1,27 @@
 import axios from 'axios';
 const BASE_URL ='https://qtify-backend.labs.crio.do';
 
-export const getTopAlbums=async()=>{
-    const response=await axios.get(`${BASE_URL}/albums/top`);
-    return response.data;
+export const getSongs = async () => {
+  const response = await axios.get(`${BASE_URL}/songs`);
+  const data = response.data;
+  return Array.isArray(data) ? data : (data.data || []);
 };
 
-export const getNewAlbums=async()=>{
-    const response=await axios.get(`${BASE_URL}/albums/new`);
-    return response.data;
+export const getGenres = async () => {
+  const response = await axios.get(`${BASE_URL}/genres`);
+  const data = response.data;
+  const genresArray = Array.isArray(data) ? data : (data.data || []);
+  return genresArray;
 };
 
-export const getSongs= async()=>{
-    const response=await axios.get(`${BASE_URL}/songs`);
-    return response.data;
-}
+export const getTopAlbums = async () => {
+  const response = await axios.get(`${BASE_URL}/albums/top`);
+  const data = response.data;
+  return Array.isArray(data) ? data : (data.data || []);
+};
 
-export const getGenres= async()=>{
-    const response = await axios.get(`${BASE_URL}/genres`);
-    return response.data;
+export const getNewAlbums = async () => {
+  const response = await axios.get(`${BASE_URL}/albums/new`);
+  const data = response.data;
+  return Array.isArray(data) ? data : (data.data || []);
 };

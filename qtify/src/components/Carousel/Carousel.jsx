@@ -3,8 +3,8 @@ import { Navigation } from 'swiper/modules';
 import React, { useRef } from 'react';
 import 'swiper/css';
 
-import LeftArrow from '../../assests/left.svg';
-import RightArrow from '../../assests/right.svg';
+import LeftArrow from '../../assets/left.svg';
+import RightArrow from '../../assets/right.svg';
 import styles from './Carousel.module.css';
 
 function LeftNav({navRef}){

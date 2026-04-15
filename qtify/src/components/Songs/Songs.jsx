@@ -11,13 +11,20 @@ function Songs(){
     const [selectedGenre, setSelectedGenre] = useState("all");
 
     useEffect(()=>{
+        
         const loadData = async()=>{
+            try{
             const [songsData, genresData] = await Promise.all([
                 getSongs(),
                 getGenres()
             ]);
-            setSongs(songsData);
-            setGenres([{key:"all", label:"All"},...genresData]);
+            setSongs(Array.isArray(songsData) ? songsData:[]);
+            setGenres([{key:"all", label:"All"},...(Array.isArray(genresData) ? genresData:[])]);
+        }catch(error){
+            console.error("Failed to fetch songs/genres:", error);
+            setSongs([]);
+             setGenres([{ key: "all", label: "All" }]);
+        }
         };
         loadData();
     },[]);
@@ -30,7 +37,7 @@ function Songs(){
     },[songs, selectedGenre]);
 
     return (
-        <section className={styles.songsSection}>
+        <section className={styles.songsSection} data-testid="songs-section">
             <div className={styles.header}>
                 <h2 className={styles.title}>
                     Songs
