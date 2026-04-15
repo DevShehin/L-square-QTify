@@ -1,0 +1,9 @@
+.logoContainer{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    height: 40px;
+    width: auto;
+    filter: brightness(0);
+}

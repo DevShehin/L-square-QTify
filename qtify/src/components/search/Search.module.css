@@ -1,0 +1,27 @@
+.searchContainer {
+  display: flex;
+  flex: 1;
+  max-width: 600px; 
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: 6px 12px;
+  
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  width: 100%;
+  background: transparent;
+}
+
+.searchIcon {
+  color: #666;
+  font-size: 16px;
+}
+.searchContainer:focus-within {
+  border-color: white;
+}

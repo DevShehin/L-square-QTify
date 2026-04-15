@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar/Navbar";
+import HeroSection from "./components/HeroSection/HeroSection";
+import Section from './components/Section/Section';
+import Songs from './components/Songs/Songs';
+import { getTopAlbums, getNewAlbums } from './api/index';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <Navbar />
+        <HeroSection />
+
+        <Section
+        title="Top Albums"
+        fetchData={getTopAlbums}
+        showToggle={true}
+        />
+
+        <Section
+        title="New Albums"
+        fetchData={getNewAlbums}
+        showToggle={true}
+        />
+
+        <Songs />
     </div>
   );
 }

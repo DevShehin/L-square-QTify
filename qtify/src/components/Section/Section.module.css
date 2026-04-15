@@ -1,0 +1,27 @@
+.section{
+    padding: 32px 40px;
+}
+.header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 24px; 
+}
+.title{
+font-size: 20px;
+font-weight: 600;
+color: var(--color-white)
+}
+.toggleButton{
+    background: transparent;
+    color: var(--color-primary-green);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}

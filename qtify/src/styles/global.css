@@ -1,0 +1,21 @@
+
+:root {
+  --color-primary-green: #34C94B;   /* QTify green */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-dark-bg: #121212;         /* Dark background */
+  --color-card-bg: #1E1E1E;
+  --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  font-family: var(--font-primary);
+  color: var(--color-white);
+}

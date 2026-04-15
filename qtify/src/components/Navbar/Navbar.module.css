@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 40px;
+  gap: 20px;
+
+  background-color: var(--color-primary-green);;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar > :nth-child(2) {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
