@@ -44,7 +44,7 @@ function Section ({title,fetchData,showToggle=true}){
                         key={item.id}
                         image={item.image}
                         title={item.title}
-                        follows={item.followCount}
+                        follows={item.followers}
                         />
                     ))}
                 </Carousel>
@@ -55,7 +55,7 @@ function Section ({title,fetchData,showToggle=true}){
                         key={item.id}
                         image={item.image}
                         title={item.title}
-                        follows={item.followCount}
+                        follows={item.followers}
                         />
                     ))}
                 </div>
