@@ -7,6 +7,7 @@ import { getTopAlbums, getNewAlbums } from './api/index';
 function App() {
   return (
     <div>
+      {/* QTify App - Updated with followers fix */}
        <Navbar />
         <HeroSection />
 
