@@ -5,7 +5,7 @@ import styles from './Section.module.css';
 
 function Section ({title,fetchData,showToggle=true}){
     const [data, setData] = useState([]);
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(true);
 
     useEffect(()=>{
         const loadData = async () =>{
