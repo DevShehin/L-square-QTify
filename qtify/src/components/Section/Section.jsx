@@ -5,7 +5,7 @@ import styles from './Section.module.css';
 
 function Section ({title,fetchData,showToggle=true}){
     const [data, setData] = useState([]);
-    const [isCollasped, setIsCollapsed]= useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
     useEffect(()=>{
         const loadData = async () =>{
@@ -30,14 +30,14 @@ function Section ({title,fetchData,showToggle=true}){
             {showToggle && (
                 <button 
                 className={styles.toggleButton}
-                onClick={()=> setIsCollapsed(!isCollasped)}
+                onClick={()=> setIsCollapsed(!isCollapsed)}
                 >
-                    {isCollasped ? "Show All" : "Collapse"}
+                    {isCollapsed ? "Show All" : "Collapse"}
                 </button>
             )}
             </div>
 
-            {isCollasped ?(
+            {isCollapsed ?(
                 <Carousel>
                     {data.map(item=>(
                         <Card
