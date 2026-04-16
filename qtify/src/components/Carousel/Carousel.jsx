@@ -1,7 +1,8 @@
 import {Swiper, SwiperSlide} from 'swiper/react'
 import { Navigation } from 'swiper/modules';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 import LeftArrow from '../../assets/left.svg';
 import RightArrow from '../../assets/right.svg';
@@ -30,6 +31,16 @@ function RightNav({navRef}){
 function Carousel({children}){
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+     const swiperRef = useRef(null);
+
+     useEffect(()=>{
+        if(swiperRef.current && prevRef.current && nextRef.current){
+              swiperRef.current.params.navigation.prevEl = prevRef.current;
+               swiperRef.current.params.navigation.nextEl = nextRef.current;
+                swiperRef.current.navigation.init();
+                swiperRef.current.navigation.update();
+        }
+     },[]);
 
     return (
         <div className={styles.carouselWrapper}>
@@ -42,10 +53,7 @@ function Carousel({children}){
                 nextEl: nextRef.current
             }}
             onSwiper={(swiper)=>{
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
+                swiperRef.current = swiper;
 
             }}
             breakpoints={{
